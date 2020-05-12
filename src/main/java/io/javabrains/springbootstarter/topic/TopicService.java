@@ -15,4 +15,8 @@ public class TopicService {
 	public List<Topic> getAllTopics(){
 		return topics;
 		}
+	
+	public Topic getTopic(String id) {
+		return topics.parallelStream().filter(t ->t.getId().equals(id)).findFirst().get();
 	}
+}
